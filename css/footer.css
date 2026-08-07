@@ -1,0 +1,149 @@
+/* css/footer.css */
+
+.main-footer {
+  background-color: var(--cor-secundaria); 
+  color: #FFFFFF; 
+  font-family: var(--fonte-principal); 
+  padding: 40px 20px; 
+}
+
+.footer-top {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding-bottom: 30px; 
+  border-bottom: 1px solid #333; 
+  margin-bottom: 30px; 
+}
+
+.footer-logo img {
+  max-width: 150px; 
+  height: auto; 
+  margin-bottom: 10px; 
+}
+
+.footer-logo p {
+  font-size: 0.9rem; 
+  color: #ccc; 
+}
+
+.footer-social a {
+  display: inline-block; 
+  margin-left: 15px; 
+  font-family: var(--fonte-principal);
+}
+
+.footer-social a i {
+  font-size: 2.5em; 
+  color: #FFFFFF; 
+  opacity: 0.7; 
+  transition: opacity 0.3s ease; 
+}
+
+.footer-social a:hover i {
+  opacity: 1; 
+}
+
+.footer-middle {
+  display: flex; 
+  flex-direction: column; 
+  gap: 30px; 
+  padding-bottom: 40px; 
+  border-bottom: 1px solid #333; 
+  margin-bottom: 30px; 
+}
+
+.footer-newsletter h3 {
+  font-size: 1.2rem; 
+  font-weight: bold; 
+  margin-bottom: 15px; 
+}
+
+.footer-newsletter form {
+  display: flex; 
+  max-width: 400px; 
+}
+
+.footer-newsletter input[type="email"] {
+  flex-grow: 1; 
+  padding: 10px; 
+  border: 1px solid #555; 
+  border-radius: 5px 0 0 5px; 
+  color: #333; 
+}
+
+.footer-newsletter button {
+  background-color: #0118D8; 
+  color: #FFFFFF; 
+  border: none; 
+  padding: 10px 15px; 
+  border-radius: 0 5px 5px 0; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+.footer-newsletter button:hover {
+  background-color: #1B56FD; 
+}
+
+.footer-nav {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 20px; 
+  font-family: var(--fonte-principal);
+}
+
+.footer-nav h4 {
+  font-size: 1rem; 
+  font-weight: bold; 
+  margin-bottom: 10px; 
+}
+
+.footer-nav ul {
+  list-style: none; 
+  padding: 0; 
+  font-family: var(--fonte-principal);
+}
+
+.footer-nav li {
+  margin-bottom: 8px; 
+  font-family: var(--fonte-principal);
+}
+
+.footer-nav a {
+  color: #FFFFFF; 
+  text-decoration: none; 
+  font-size: 0.9rem; 
+  opacity: 0.7; 
+  transition: opacity 0.3s ease; 
+  font-family: var(--fonte-principal);
+}
+
+.footer-nav a:hover {
+  opacity: 1; 
+}
+
+.footer-bottom {
+  text-align: center; 
+  font-size: 0.8rem; 
+  color: #ffffff; 
+  line-height: 1.5; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.footer-bottom p:last-child {
+  margin-top: 10px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.footer-bottom p:last-child a img.vtechnologie-logo {
+  width: 40px;
+  height: auto;
+  vertical-align: middle; 
+  margin-left: 5px; 
+  margin-top: 0; 
+}

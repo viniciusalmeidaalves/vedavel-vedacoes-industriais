@@ -1,0 +1,181 @@
+/* =========================================================
+--- css/accessibility.css ---
+Estilos para o Widget de Acessibilidade.
+========================================================= */
+
+/* Estilos para o botão de gatilho do widget */
+.accessibility-trigger {
+    position: fixed;
+    top: 50%; /* Centraliza verticalmente na metade da tela */
+    transform: translateY(-50%); /* Ajusta para que o centro do elemento fique na metade da tela */
+    right: 20px;
+    background-color: var(--cor-primaria); /* Cor principal do site */
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    transition: background-color 0.3s ease;
+}
+
+.accessibility-trigger:hover {
+    background-color: var(--cor-secundaria); /* Cor de hover */
+}
+
+/* Estilos para o painel de acessibilidade */
+.accessibility-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 90px; /* Posição ao lado do botão de voltar ao topo/WhatsApp */
+    background-color: white;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    padding: 20px;
+    width: 280px;
+    z-index: 1000;
+    font-family: var(--fonte-principal);
+    display: none; /* Oculto por padrão */
+    flex-direction: column;
+    gap: 15px;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.accessibility-panel.is-open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.accessibility-panel h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 8px;
+}
+
+.accessibility-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--cor-texto-secundario);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.accessibility-close-btn:hover {
+    color: var(--cor-primaria);
+}
+
+.accessibility-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.accessibility-option span {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: var(--cor-texto-principal);
+}
+
+.accessibility-option button {
+    background-color: #f0f0f0;
+    border: 1px solid var(--cor-borda);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.accessibility-option button:hover {
+    background-color: var(--cor-secundaria);
+    color: white;
+    border-color: var(--cor-secundaria);
+}
+
+/* Estilos para o corpo da página quando as opções de acessibilidade estão ativas */
+/* Tamanho da Fonte */
+body.font-size-small { font-size: 0.9em; } /* Reduz em 10% */
+body.font-size-large { font-size: 1.15em; } /* Aumenta em 15% */
+body.font-size-xlarge { font-size: 1.3em; } /* Aumenta em 30% */
+
+
+/* Modo de Alto Contraste */
+body.high-contrast {
+    background-color: black !important;
+    color: yellow !important;
+}
+body.high-contrast h1, body.high-contrast h2, body.high-contrast h3,
+body.high-contrast h4, body.high-contrast h5, body.high-contrast h6 {
+    color: white !important;
+}
+body.high-contrast p, body.high-contrast span, body.high-contrast li,
+body.high-contrast a, body.high-contrast button, body.high-contrast input,
+body.high-contrast textarea, body.high-contrast select {
+    color: yellow !important;
+}
+body.high-contrast a {
+    text-decoration: underline !important;
+}
+body.high-contrast .menu-topo, body.high-contrast .main-footer,
+body.high-contrast .page-header, body.high-contrast .sidebar-menu,
+body.high-contrast .produto-card {
+    background-color: black !important;
+    border-color: yellow !important;
+}
+body.high-contrast img {
+    filter: grayscale(100%) brightness(120%); /* Ajusta imagens para contraste */
+}
+
+
+/* Responsividade para o Widget de Acessibilidade */
+@media (max-width: 768px) {
+    .accessibility-trigger {
+        top: auto; /* Remove o top fixo para mobile */
+        bottom: 80px; /* Ajusta a posição para mobile */
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
+        transform: none; /* Remove a transformação de centralização para mobile */
+    }
+
+    .accessibility-panel {
+        bottom: 15px;
+        right: 15px;
+        left: 15px; /* Ocupa a largura total menos padding */
+        width: auto; /* Remove largura fixa */
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .accessibility-panel {
+        right: 10px;
+        left: 10px;
+    }
+    .accessibility-option {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .accessibility-option button {
+        width: 100%;
+    }
+}

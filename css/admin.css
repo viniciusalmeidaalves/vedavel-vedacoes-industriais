@@ -1,0 +1,704 @@
+/* ========================================================= */
+/* --- Módulo: _admin.css --- */
+/* Estilos específicos para o Painel Administrativo (admin/). */
+/* ========================================================= */
+
+/* Definição das variáveis de cores para o tema do painel administrativo */
+:root {
+    --cor-primaria: #0118D8; /* Azul primário para botões e cabeçalhos*/
+    --cor-secundaria: #1B56FD; /* Azul secundário para destaques e hover*/
+}
+
+/* Estilos globais para o admin container e header */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-container {
+    max-width: 1200px; /* Aumentado para acomodar mais conteúdo como o dashboard e tabelas de produto */
+    margin: 20px auto 40px auto; /* Ajustada margem superior e inferior */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Estilos para o NOVO Top Header do Admin */
+.admin-top-header {
+    background-color: var(--cor-primaria); /* Cor de fundo laranja */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Alinha itens nas pontas */
+    align-items: center;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Mantém o cabeçalho no topo ao rolar */
+    top: 0;
+    z-index: 100; /* Garante que fique acima de outros elementos */
+}
+
+.admin-header-left {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espaço entre o logo/título e o bloco de boas-vindas/ícones */
+}
+
+.admin-logo-link {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Impede que o logo encolha */
+    white-space: nowrap; /* Evita que o texto "Painel Admin" quebre */
+}
+
+.admin-greeting-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre a saudação e os ícones */
+    flex-grow: 1; /* Permite que este bloco ocupe espaço disponível */
+}
+
+/* Estilos para informações do usuário */
+.user-info {
+    font-size: 0.95rem;
+    color: #f0f0f0; /* Um pouco mais claro */
+    flex-shrink: 0; /* Impede que o texto encolha */
+    white-space: nowrap; /* Impede que o "Bem-vindo, admin!" quebre */
+}
+
+.user-info strong {
+    font-weight: bold;
+    color: white;
+}
+
+/* Estilos para a navegação principal (agora apenas ícones) */
+.admin-main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Espaço entre os ícones */
+}
+
+.admin-main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 8px; /* Reduzido padding para ícones */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem; /* Tamanho dos ícones */
+    display: flex; /* Para centralizar o ícone */
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-main-nav a:hover, .admin-main-nav a.active {
+    background-color: var(--cor-secundaria); /* Cor de destaque no hover/ativo */
+    color: var(--cor-texto); /* Texto escuro para contraste */
+}
+
+.admin-header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre os links */
+    flex-shrink: 0; /* Impede que o bloco da direita encolha */
+}
+
+.view-site-link, .logout-link {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+}
+
+.view-site-link:hover, .logout-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo sutil no hover */
+}
+
+.view-site-link i, .logout-link i {
+    font-size: 1rem;
+}
+
+/* Remover a navegação antiga do admin se ela ainda estiver no HTML */
+/* IMPORTANTE: Esta regra OCULTA o elemento. Verifique se o HTML antigo foi removido */
+.admin-container > .admin-nav {
+    display: none;
+}
+
+/* Estilos para seções de formulário e listagem */
+.form-section, .list-section {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+}
+
+.form-section h3, .list-section h3 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Estilos para grupos de formulário */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="password"],
+.form-group input[type="file"],
+.form-group textarea,
+.form-group select {
+    width: calc(100% - 22px); /* Ajuste para padding e borda */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Inclui padding e borda no width */
+    margin-top: 5px; /* Pequena margem superior para espaçamento */
+}
+
+.form-group input[type="file"] {
+    padding: 8px;
+    background-color: #e9e9e9;
+    border: 1px dashed #ccc;
+}
+
+/* Estilos para layout de formulário em colunas */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Aumentado o gap para melhor espaçamento entre colunas */
+    margin-bottom: 10px; /* Adicionado um pouco de margem abaixo da linha */
+}
+
+.form-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Estilos para botões de submissão */
+.btn-submit {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold; /* Adicionado para consistência */
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Estilos para botões secundários (Cancelar Edição) */
+.btn-secondary {
+    background-color: #6c757d; /* Cor cinza padrão para secundário */
+    color: white;
+    text-decoration: none; /* Garante que não tenha sublinhado */
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-block; /* Para que o a se comporte como botão */
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+
+/* Estilos para tabelas de listagem */
+table {
+    width: 100%; /* Ajuste a largura da tabela para ser 100% de seu container */
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sombra mais sutil para a tabela */
+    border-radius: 8px; /* Cantos arredondados para a tabela */
+    /* Removido overflow: hidden; diretamente da table, movido para o wrapper */
+}
+
+/* NOVO: Estilo para o container responsivo da tabela */
+.table-container-responsive {
+    overflow-x: auto; /* Habilita a barra de rolagem horizontal se o conteúdo transbordar */
+    width: 100%; /* Garante que o contêiner ocupe a largura total disponível */
+    border-radius: 8px; /* Mantém os cantos arredondados do contêiner da tabela */
+    overflow-y: hidden; /* Oculta barra de rolagem vertical extra se não for necessária */
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    min-width: 80px; /* Adicionado para dar um tamanho mínimo às colunas e forçar o scroll */
+}
+
+table th {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase; /* Deixa o cabeçalho mais profissional */
+    font-size: 0.9rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #f8f8f8; /* Linhas zebradas mais claras */
+}
+
+table tr:hover {
+    background-color: #eef2f5; /* Hover sutil na linha */
+}
+
+/* Estilos para botões de ação na tabela */
+.actions {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap; /* Evita que os botões quebrem linha */
+    min-width: 120px; /* Garante que a coluna de ações tenha espaço suficiente */
+}
+
+.actions .btn { /* Ajustes para botões dentro de .actions */
+    padding: 6px 12px; /* Aumenta um pouco o padding */
+    font-size: 0.8rem; /* Reduz um pouco a fonte */
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Garantir que links não tenham sublinhado */
+}
+
+.actions .edit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.actions .edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.actions .delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.actions .delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Estilos para miniaturas de imagem de produto */
+.product-img-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border: 1px solid #eee; /* Adiciona uma pequena borda */
+}
+
+/* Estilo para exibir a imagem atual na edição */
+.current-image-preview {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+.current-image-preview img {
+    max-width: 100px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block; /* Garante que a imagem ocupe sua própria linha */
+    margin-top: 5px;
+}
+
+
+/* Estilos para Login */
+.login-page-body { /* NOVO: Estilo aplicado ao body da página de login */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.login-wrapper { /* NOVO: Contêiner principal para as duas colunas */
+    display: flex;
+    width: 100%;
+    max-width: 1000px; /* Largura máxima do wrapper da tela de login */
+    height: 600px; /* Altura fixa para o layout, pode ser ajustado */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    margin: 20px;
+}
+
+.login-image-section { /* NOVO: Seção da imagem de fundo */
+    flex: 1;
+    /* CORREÇÃO: Descomente a linha abaixo e certifique-se que o nome do arquivo esteja correto. */
+    background-image: url("../midias/imagens/backgrounds/background-login.jpg"); /* ATUALIZADO: Caminho correto da imagem */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.login-image-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, 0.4); /* Comentar esta linha */
+    background-color: rgba(0, 0, 0, 0.4); /* OU mude para 0 de opacidade */
+    z-index: 1;
+}
+
+.portal-content { /* NOVO: Conteúdo de texto sobre a imagem */
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.portal-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.portal-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+.login-form-section { /* NOVO: Seção do formulário de login */
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    /* Resetar estilos do .login-container que estavam centralizando no body */
+    margin: 0;
+    box-shadow: none; /* Remover sombra duplicada */
+    width: 100%;
+    padding: 0; /* Remover padding, já está no login-form-section */
+    /* NOVO: Centraliza o texto e a imagem do logo dentro do login-container */
+    text-align: center;
+}
+
+/* NOVO: Estilos para o logo na página de login */
+.login-logo {
+    max-width: 180px; /* Ajuste o tamanho conforme a necessidade */
+    height: auto;
+    margin-bottom: 30px; /* Espaçamento abaixo do logo */
+    margin-top: -30px; /* Ajuste para subir um pouco o logo */
+}
+
+.login-container h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.btn-login {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-login:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.remember-me {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.register-link a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Mensagens de feedback (sucesso/erro) - ATUALIZADO */
+/* Removido o estilo que estava no body, agora o .message fica dentro do admin-container */
+.message {
+    padding: 15px; /* Aumentado o padding */
+    margin: 0 0 20px 0; /* Margem inferior */
+    border-radius: 8px; /* Cantos mais arredondados */
+    text-align: center;
+    font-weight: bold;
+    display: block;
+    box-sizing: border-box;
+    font-size: 1.05rem; /* Levemente maior */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Adiciona sombra sutil */
+}
+
+.message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.message.info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border: 1px solid #bee5eb;
+}
+
+
+/* Dashboard Admin (admin/index.php) - Manter os cards */
+.dashboard-greeting {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.dashboard-apps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.app-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.app-card i {
+    font-size: 4rem;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+.app-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+
+
+/* Media Queries Admin */
+@media (max-width: 768px) {
+    .admin-top-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .admin-header-left, .admin-header-right {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .admin-greeting-nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .user-info {
+        order: -1;
+        margin-left: auto;
+        padding: 5px 10px;
+    }
+
+    .admin-main-nav {
+        width: 100%;
+    }
+
+    .admin-main-nav ul {
+        justify-content: flex-start;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .admin-main-nav a {
+        flex-basis: calc(33% - 15px); /* 3 ícones por linha em mobile, com gap */
+        max-width: calc(33% - 15px);
+        font-size: 1.5rem;
+        height: 40px;
+    }
+
+    .view-site-link, .logout-link {
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    /* Estilos Login Mobile */
+    .login-wrapper {
+        flex-direction: column; /* Colunas empilhadas em telas menores */
+        height: auto; /* Altura automática */
+        max-width: 90%; /* Reduz a largura máxima */
+        margin: 20px auto; /* Centraliza verticalmente e horizontalmente */
+    }
+    .login-image-section {
+        height: 200px; /* Altura menor para a imagem em mobile */
+        min-height: 150px;
+    }
+    .login-form-section {
+        padding: 30px 20px; /* Mais padding em mobile */
+    }
+    .portal-content h2 {
+        font-size: 2rem;
+    }
+    .portal-content p {
+        font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+        .login-wrapper {
+            max-width: 95%;
+        }
+        .login-image-section {
+            height: 150px;
+        }
+        .login-form-section {
+            padding: 20px 15px;
+        }
+    }
+
+    /* Outros estilos admin para mobile */
+    .admin-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+    }
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+    }
+    .actions {
+        justify-content: flex-end;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-column {
+        min-width: unset;
+        width: 100%;
+    }
+    .app-card {
+        width: 100%;
+    }
+}

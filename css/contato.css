@@ -1,0 +1,185 @@
+/* css/contato.css */
+
+.contato-section {
+  padding: var(--espacamento-interno-secao); 
+  background-color: var(--cor-fundo-secao); 
+  font-family: var(--fonte-principal); 
+}
+
+.contato-section .container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: var(--espacamento-interno-container); 
+}
+
+.contato-section h2 {
+  text-align: center; 
+  margin-bottom: var(--espacamento-inferior-titulo); 
+  color: var(--cor-texto-principal); 
+  font-size: var(--tamanho-fonte-titulo);
+}
+
+.contato-wrapper {
+  display: flex; 
+  gap: var(--espacamento-entre-form-info); 
+  margin-bottom: var(--espacamento-inferior-titulo); 
+}
+
+.contato-form {
+  flex: 1; 
+  background-color: var(--cor-fundo-formulario); 
+  padding: var(--espacamento-interno-formulario); 
+  border-radius: var(--cor-borda-arredondada); 
+  box-shadow: var(--sombra-padrao); 
+}
+
+.contato-form h3 {
+  margin-top: 0; 
+  margin-bottom: calc(var(--espacamento-inferior-grupo-campo) / 2); 
+  color: var(--cor-texto-principal); 
+  font-size: var(--tamanho-fonte-subtitulo);
+}
+
+.form-group {
+  margin-bottom: var(--espacamento-inferior-grupo-campo); 
+}
+
+.form-group label {
+  display: block; 
+  margin-bottom: var(--espacamento-inferior-label); 
+  font-weight: bold; 
+  color: var(--cor-texto-secundario); 
+  font-size: var(--tamanho-fonte-principal);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid var(--cor-borda); 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  font-size: var(--tamanho-fonte-principal); 
+}
+
+.form-group .g-recaptcha { 
+  margin-top: 10px; 
+}
+
+.contato-form button#iniciar-chat {
+  background-color: var(--cor-primaria); 
+  color: white; 
+  padding: 12px 20px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: var(--tamanho-fonte-subtitulo); 
+  transition: var(--transicao-padrao); 
+  width: 100%; 
+}
+
+.contato-form button#iniciar-chat:hover {
+  background-color: var(--cor-primaria-hover); 
+}
+
+.contato-info {
+  flex: 1; 
+  background-color: var(--cor-fundo-formulario); 
+  padding: var(--espacamento-interno-formulario); 
+  border-radius: var(--cor-borda-arredondada); 
+  box-shadow: var(--sombra-padrao); 
+}
+
+.contato-info h3 {
+  margin-top: 0; 
+  margin-bottom: calc(var(--espacamento-inferior-grupo-campo) / 2); 
+  color: var(--cor-texto-principal); 
+  font-size: var(--tamanho-fonte-subtitulo);
+}
+
+.info-item {
+  margin-bottom: 15px; 
+}
+
+.info-item h4 {
+  margin-top: 0; 
+  margin-bottom: var(--espacamento-inferior-label); 
+  color: var(--cor-texto-secundario); 
+  font-size: var(--tamanho-fonte-principal);
+  font-weight: bold;
+}
+
+.info-item p {
+  color: var(--cor-texto-terciario); 
+  margin-bottom: 0; 
+  font-size: var(--tamanho-fonte-principal);
+}
+
+.mapa-google {
+  margin-top: var(--espacamento-inferior-titulo); 
+  border-radius: var(--cor-borda-arredondada); 
+  overflow: hidden; 
+  box-shadow: var(--sombra-padrao); 
+}
+
+.mapa-google h3 {
+  text-align: center; 
+  margin-bottom: calc(var(--espacamento-inferior-grupo-campo) / 2); 
+  color: var(--cor-texto-principal); 
+  font-size: var(--tamanho-fonte-subtitulo);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contato-wrapper {
+    flex-direction: column; 
+    gap: 20px; 
+  }
+  .contato-form,
+  .contato-info {
+    flex: 1; 
+    padding: 20px; 
+  }
+  .contato-section h2 {
+    font-size: 28px; 
+    margin-bottom: 20px;
+  }
+  .contato-form h3,
+  .contato-info h3,
+  .mapa-google h3 {
+    font-size: 20px; 
+    margin-bottom: 15px;
+  }
+  .mapa-google iframe {
+    width: 100%;
+    height: 450px; 
+    display: block;
+    border: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .contato-section .container {
+    padding: 0 15px; 
+  }
+  .form-group label,
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .info-item p {
+    font-size: 14px; 
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"] {
+    padding: 8px;
+  }
+  .contato-form button#iniciar-chat,
+  .info-item h4 {
+    font-size: 16px; 
+  }
+  .contato-form button#iniciar-chat {
+    padding: 10px 15px;
+  }
+}

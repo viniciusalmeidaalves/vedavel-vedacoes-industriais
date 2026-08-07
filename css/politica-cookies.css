@@ -1,0 +1,116 @@
+/* =========================================================
+--- css/politica-cookies.css ---
+Estilos específicos para a página de Política de Cookies.
+========================================================= */
+
+/* Estilos para o cabeçalho da página de cookies */
+.section-header-cookies {
+    /* CORREÇÃO: Ajusta o caminho da imagem de fundo para a nova imagem */
+    background-image: linear-gradient(rgba(13, 71, 161, 0.7), rgba(13, 71, 161, 0.7)), url('../midias/imagens/backgrounds/politicadecookies.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: var(--fonte-principal);
+}
+
+.section-header-cookies h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.section-header-cookies p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Estilos para o conteúdo principal da política de cookies */
+.politica-cookies-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    line-height: 1.8;
+    font-size: 1rem;
+    color: var(--cor-texto-principal);
+    margin-bottom: 60px; /* Espaço antes do rodapé */
+    font-family: var(--fonte-principal);
+}
+
+.politica-cookies-content h2 {
+    color: var(--cor-primaria);
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 8px;
+}
+
+.politica-cookies-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.politica-cookies-content h3 {
+    color: var(--cor-secundaria);
+    font-size: 1.4rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.politica-cookies-content p {
+    margin-bottom: 15px;
+}
+
+.politica-cookies-content ul {
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.politica-cookies-content ul li {
+    margin-bottom: 8px;
+}
+
+.politica-cookies-content a {
+    color: var(--cor-primaria);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.politica-cookies-content a:hover {
+    color: var(--cor-primaria-hover);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section-header-cookies {
+        padding: 40px 15px;
+    }
+
+    .section-header-cookies h1 {
+        font-size: 2.2rem;
+    }
+
+    .politica-cookies-content {
+        padding: 25px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .politica-cookies-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .politica-cookies-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .politica-cookies-content ul {
+        margin-left: 15px;
+    }
+}

@@ -1,0 +1,79 @@
+/* =========================================================
+--- css/cookie-consent.css ---
+Estilos para o banner de consentimento de cookies.
+========================================================= */
+
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Um tom de azul escuro para o fundo */
+    color: var(--cor-primaria);
+    padding: 15px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    display: flex; /* Usar flexbox para alinhamento do conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    z-index: 2000; /* Garante que fique acima de outros elementos */
+    font-family: var(--fonte-principal);
+    gap: 20px; /* Espaço entre o texto e o botão */
+}
+
+.cookie-consent-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que o conteúdo quebre linha em telas pequenas */
+    max-width: 1200px; /* Limita a largura do conteúdo dentro do banner */
+    justify-content: center; /* Centraliza conteúdo quando quebra linha */
+}
+
+.cookie-consent-banner p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    flex-grow: 1; /* Permite que o parágrafo ocupe espaço */
+    text-align: center; /* Centraliza o texto */
+}
+
+.cookie-consent-banner p a {
+    color: #87CEEB; /* Um azul mais claro para o link */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.cookie-consent-banner p a:hover {
+    color: #b0e0e6;
+}
+
+.cookie-consent-btn {
+    background-color: var(--cor-primaria); /* Usar a cor primária do site */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Impede que o texto do botão quebre linha */
+    margin-left: 20px; /* Espaço à esquerda para separar do texto */
+}
+
+.cookie-consent-btn:hover {
+    background-color: var(--cor-primaria-hover); /* Cor de hover da primária */
+}
+
+/* Responsividade para o banner de cookies */
+@media (max-width: 768px) {
+    .cookie-consent-banner {
+        flex-direction: column; /* Empilha o texto e o botão em telas menores */
+        text-align: center;
+        gap: 10px; /* Reduz o espaço entre eles */
+    }
+
+    .cookie-consent-btn {
+        width: 80%; /* Ocupa mais largura em telas pequenas */
+        margin-left: 0; /* Remove a margem lateral */
+    }
+}

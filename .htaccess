@@ -1,0 +1,38 @@
+# Ativa o motor de reescrita de URLs
+RewriteEngine On
+
+# Define a base para as regras de reescrita.
+# IMPORTANTE: Se o seu projeto estiver em uma subpasta (ex: http://localhost/projeto-vedavel/),
+# esta linha deve ser /nome-da-sua-pasta-do-projeto/
+# Se o seu projeto estiver na raiz do servidor (ex: http://localhost/), use: RewriteBase /
+RewriteBase /
+
+# --- ADICIONE ESTAS LINHAS PARA REDIRECIONAR .HTML PARA .PHP ---
+# ESTAS REGRAS DEVEM VIR ANTES DAS REGRAS DE REESCRITA DE URL AMIGÁVEL
+# para garantir que os redirecionamentos 301 aconteçam primeiro.
+RewriteRule ^index\.html$ /index.php [R=301,L]
+RewriteRule ^contato\.html$ /contato.php [R=301,L]
+RewriteRule ^produtos\.html$ /produtos.php [R=301,L]
+RewriteRule ^catalogo\.html$ /catalogo.php [R=301,L]
+# Se você tiver outras páginas .html para redirecionar, adicione mais linhas aqui.
+# APENAS adicione se o Google Search Console mostrou mais URLs .html que você quer redirecionar para .php:
+# RewriteRule ^nome_da_outra_pagina\.html$ /nome_da_outra_pagina.php [R=301,L]
+# ------------------------------------------------------------------
+
+
+# Regra para páginas de detalhes de produtos (URLs amigáveis com slug)
+# Exemplo: /produto/nome-do-produto-aqui
+# Transforma em: /produto_detalhe.php?slug=nome-do-produto-aqui
+RewriteRule ^produto/([a-zA-Z0-9_-]+)/?$ produto_detalhe.php?slug=$1 [L,QSA]
+
+# --- Opcional: Regra para remover a extensão .php de outras páginas (ex: /contato -> /contato.php) ---
+# Esta regra só é ativada se um arquivo .php com o nome solicitado existir.
+# Assim, você pode usar /produtos ou /contato em seus links e o servidor encontrará produtos.php ou contato.php.
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
+
+# IMPORTANTE: As regras abaixo ajudam a evitar que o servidor processe o .htaccess para arquivos existentes
+# Se a requisição não é para um arquivo ou diretório que existe, então a reescrita é aplicada.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Esta linha é necessária para o funcionamento correto das regras acima em alguns cenários.

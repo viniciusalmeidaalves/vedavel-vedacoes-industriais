@@ -1,0 +1,22 @@
+# Configuração local e segredos
+.env
+.env.*
+!.env.example
+
+# Arquivos temporários do sistema operacional e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.temp
+
+# Arquivos temporários do PHP
+*.cache
+
+# Imagens enviadas em runtime
+uploads/products/*
+!uploads/products/.gitkeep

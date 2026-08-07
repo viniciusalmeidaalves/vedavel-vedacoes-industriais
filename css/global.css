@@ -1,0 +1,88 @@
+/* css/global.css */
+
+:root {
+  --cor-primaria: #0118D8; 
+  --cor-secundaria: #1B56FD; 
+  --cor-texto: #333; 
+  --fonte-principal: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  --cor-texto-principal: #333;
+  --cor-texto-secundario: #555;
+  --cor-texto-terciario: #777;
+  --cor-fundo-secao: #f9f9f9;
+  --cor-fundo-formulario: #fff;
+  --cor-borda: #ccc;
+  --cor-primaria-hover: #0056b3;
+  --cor-borda-arredondada: 8px;
+  --espacamento-interno-secao: 40px 0;
+  --espacamento-interno-container: 0 20px;
+  --espacamento-inferior-titulo: 30px;
+  --espacamento-entre-form-info: 30px;
+  --espacamento-interno-formulario: 30px;
+  --espacamento-inferior-grupo-campo: 20px;
+  --espacamento-inferior-label: 5px;
+  --tamanho-fonte-principal: 16px;
+  --tamanho-fonte-titulo: 36px;
+  --tamanho-fonte-subtitulo: 18px;
+  --transicao-padrao: background-color 0.3s ease;
+  --sombra-padrao: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+/* Botão do WhatsApp */
+.whatsapp-button {
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  background-color: #25D366; 
+  color: #FFFFFF; 
+  border-radius: 50%; 
+  width: 60px; 
+  height: 60px; 
+  text-align: center; 
+  line-height: 60px; 
+  font-size: 2.5rem; 
+  z-index: 1000; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  transition: background-color 0.3s ease; 
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E; 
+}
+
+/* Botão de voltar ao topo */
+.back-to-top-button {
+  position: fixed; 
+  bottom: 20px; 
+  right: 80px; 
+  background-color: #0118D8; 
+  color: #FFFFFF; 
+  border-radius: 50%; 
+  width: 40px; 
+  height: 40px; 
+  text-align: center; 
+  line-height: 40px; 
+  font-size: 1.5rem; 
+  z-index: 1000; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; 
+}
+
+.back-to-top-button:hover {
+  background-color: #1B56FD; 
+}
+
+body.scrolled .back-to-top-button {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0s; 
+}

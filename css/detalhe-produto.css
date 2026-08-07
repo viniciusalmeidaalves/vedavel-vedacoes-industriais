@@ -1,0 +1,178 @@
+/* css/detalhe-produto.css */
+
+body { /* Adicionado para garantir que a fonte base de toda a página siga a variável global */
+    font-family: var(--fonte-principal);
+}
+
+.product-detail-section {
+  padding: 40px 20px;
+  background-color: #f8f8f8;
+  font-family: var(--fonte-principal); /* Garante a fonte para esta seção */
+}
+
+.product-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 1200px; /* Limita a largura do conteúdo para melhor leitura */
+  margin: 0 auto;
+}
+
+.product-image-gallery {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.product-main-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  object-fit: contain; /* Garante que a imagem se ajuste */
+  max-height: 400px; /* Limita a altura da imagem principal */
+}
+
+.product-info {
+  flex: 2;
+  min-width: 400px;
+  font-family: var(--fonte-principal); /* Garante a fonte para o bloco de informações do produto */
+}
+
+.product-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--cor-primaria);
+  font-family: var(--fonte-principal); /* Garante a fonte para o título H1 */
+}
+
+.product-info .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: var(--fonte-principal); /* Garante a fonte para o preço */
+}
+
+.product-info .short-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: var(--fonte-principal); /* Garante a fonte para a descrição curta */
+}
+
+.product-info .full-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-family: var(--fonte-principal); /* Garante a fonte para a descrição completa */
+}
+
+.product-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  font-family: var(--fonte-principal); /* Garante a fonte para os metadados */
+}
+
+.product-meta-item {
+  flex: 1;
+  min-width: 180px;
+  font-family: var(--fonte-principal); /* Garante a fonte para cada item de metadado */
+}
+
+.product-meta-item strong {
+  color: var(--cor-primaria);
+  display: block;
+  margin-bottom: 5px;
+  font-family: var(--fonte-principal); /* Garante a fonte para o texto em negrito nos metadados */
+}
+
+.product-meta-item span {
+  color: #555;
+  font-family: var(--fonte-principal); /* Garante a fonte para o texto normal nos metadados */
+}
+
+.contact-product-btn {
+  display: inline-block;
+  background-color: #25d366; /* Cor do WhatsApp */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  font-family: var(--fonte-principal); /* Garante a fonte para o botão */
+}
+
+.contact-product-btn:hover {
+  background-color: #1ea34a;
+}
+
+.contact-product-btn i {
+  margin-right: 10px;
+}
+
+.page-header {
+  /* Primeiro, defina a camada de cor com opacidade */
+  /* Altere o valor '0.7' (70% de opacidade) conforme sua preferência */
+  /* A cor rgba(13, 71, 161, 0.7) é um azul escuro com 70% de opacidade */
+  background-image: linear-gradient(rgba(13, 71, 161, 0.7), rgba(13, 71, 161, 0.7)), url('../midias/imagens/backgrounds/background-detalhe.jpg');
+  
+  /* Garante que a imagem cubra toda a área */
+  background-size: cover; 
+  /* Centraliza a imagem */
+  background-position: center; 
+  /* Impede que a imagem se repita */
+  background-repeat: no-repeat;
+
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: var(--fonte-principal); /* Garante a fonte para o cabeçalho da página */
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-family: var(--fonte-principal); /* Garante a fonte para o título H1 do cabeçalho */
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-family: var(--fonte-principal); /* Garante a fonte para o parágrafo do cabeçalho */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .product-detail-container {
+    flex-direction: column;
+  }
+  .product-image-gallery, .product-info {
+    min-width: unset;
+    width: 100%;
+  }
+  .product-info h1 {
+    font-size: 2rem;
+  }
+  .product-info .price {
+    font-size: 1.8rem;
+  }
+  .product-meta {
+    flex-direction: column;
+  }
+  .product-meta-item {
+    min-width: unset;
+    width: 100%;
+  }
+}

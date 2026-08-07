@@ -1,0 +1,187 @@
+/* css/menu.css */
+
+.menu-topo {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 15px 20px; 
+  background-color: #f8f8f8; 
+  border-bottom: 1px solid #eee; 
+}
+
+.logo {
+  font-size: 1.5em; 
+  font-weight: bold; 
+  color: var(--cor-primaria); 
+}
+
+.logo img {
+  display: block; 
+  height: auto; 
+}
+
+/* Menu principal */
+.menu-principal {
+  position: relative;
+  z-index: 10;
+}
+
+.menu-principal ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+  font-family: var(--fonte-principal);
+}
+
+.menu-principal li {
+  position: relative;
+  list-style: none;
+  margin-left: 20px; 
+  font-family: var(--fonte-principal);
+}
+
+.menu-principal li:first-child {
+  margin-left: 0; 
+}
+
+.menu-principal a {
+  text-decoration: none; 
+  color: #333; 
+  font-weight: bold; 
+  font-size: 0.9em; 
+  padding-bottom: 5px; 
+  font-family: var(--fonte-principal);
+}
+
+.menu-principal a:hover {
+  color: var(--cor-secundaria); 
+}
+
+.menu-principal li:first-child a {
+  color: #000; 
+  border-bottom: 2px solid #000; 
+  font-family: var(--fonte-principal);
+}
+
+/* Dropdown */
+.dropdown-produtos {
+  position: relative;
+}
+
+.dropdown-produtos > a {
+  cursor: pointer;
+  position: relative;
+  padding-right: 18px;
+}
+
+.dropdown-produtos .arrow {
+  font-size: 0.7em;
+  margin-left: 4px;
+}
+
+.dropdown-produtos-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -580px; /* valor ajustado para mover à esquerda */
+  background: #fff;
+  min-width: 600px;
+  box-shadow: 0 8px 32px rgba(1,24,216,0.10);
+  border-radius: 12px;
+  padding: 30px 40px;
+  z-index: 100;
+  /* display: flex; Esta linha foi removida para permitir que o menu seja controlado por :hover e .open */
+  gap: 40px;
+  animation: fadeInMenu 0.25s;
+}
+
+@keyframes fadeInMenu {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.dropdown-produtos:hover .dropdown-produtos-menu,
+.dropdown-produtos:focus-within .dropdown-produtos-menu {
+  display: flex;
+}
+
+/* Colunas do dropdown */
+.produtos-coluna {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  margin-bottom: 12px;
+}
+
+.produtos-titulo {
+  font-weight: bold;
+  color: var(--cor-primaria);
+  font-size: 1em;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-left: 4px solid var(--cor-secundaria);
+  padding-left: 8px;
+  margin-bottom: 18px;
+}
+
+.dropdown-produtos-menu a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-size: 1em;
+  padding: 7px 0;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  font-family: var(--fonte-principal);
+}
+
+.dropdown-produtos-menu a:hover {
+  background: var(--cor-secundaria);
+  color: #fff;
+  padding-left: 8px;
+}
+
+@media (max-width: 900px) {
+  .menu-principal ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .dropdown-produtos-menu {
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 10px 0 10px 16px;
+    margin-top: 0;
+    background: #f8f8f8;
+  }
+  .dropdown-produtos.open .dropdown-produtos-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-topo {
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+
+  .menu-principal ul {
+    margin-top: 10px; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    font-family: var(--fonte-principal);
+  }
+
+  .menu-principal li {
+    margin: 10px 0; 
+    font-family: var(--fonte-principal);
+  }
+
+  .menu-principal li:first-child {
+    margin-top: 0; 
+  }
+}
