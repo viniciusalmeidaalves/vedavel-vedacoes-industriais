@@ -1,101 +1,68 @@
 # Vedavel - Vedações Industriais
 
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Apache](https://img.shields.io/badge/Apache-D22128?style=for-the-badge&logo=apache&logoColor=white)
-![Documentation](https://img.shields.io/badge/Docs-Repository%20Standardized-34A853?style=for-the-badge)
+![PHP](https://img.shields.io/badge/PHP-7%2B-777BB4?logo=php&logoColor=white)
+![MySQL/MariaDB](https://img.shields.io/badge/MySQL%20%2F%20MariaDB-4479A1?logo=mysql&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-## Visão Geral
+Projeto institucional e comercial desenvolvido para a Vedavel, com foco em apresentação de marca, catálogo de produtos e conversão de leads por meio de contato e páginas de solução em vedações industriais.
 
-Este repositório contém o site institucional e o portal administrativo da Vedavel, empresa especializada em soluções de vedação industrial. O projeto é composto por páginas públicas para apresentação da marca, catálogo de produtos, formulário de contato e uma área administrativa para gestão de categorias, subcategorias e produtos.
+## Visão geral
 
-## Objetivo do Projeto
+Este projeto foi construído como uma solução personalizada para um cliente, com foco em:
 
-O objetivo principal é disponibilizar um site profissional para exibir o portfólio da Vedavel, facilitar o contato com clientes e permitir que a equipe administrativa gerencie o conteúdo do catálogo de forma simples.
+- apresentação institucional da empresa
+- catálogo de produtos e categorias
+- páginas de detalhe com informações técnicas
+- formulário de contato para geração de oportunidades
+- experiência visual voltada para conversão e credibilidade
 
-## Tecnologias Utilizadas
+## Stack
 
-- PHP 7+ / 8+ para a lógica do site e do painel administrativo
-- MySQL/MariaDB com conexão MySQLi
-- HTML5, CSS3 e JavaScript para a interface pública
-- Apache com suporte a reescrita de URLs via .htaccess
-- Font Awesome para ícones
-- Google reCAPTCHA e Google Analytics/Tag Manager no site público
+- PHP
+- MySQL/MariaDB
+- HTML5, CSS3 e JavaScript
+- estrutura server-side em páginas dinâmicas
+- layout responsivo para desktop e mobile
 
-## Principais Funcionalidades
+## Destaques
 
-- Página inicial institucional com destaque para produtos e depoimentos
-- Catálogo público de produtos
-- Páginas de detalhe para produtos com URL amigável baseada em slug
-- Formulário de contato com validação e envio por e-mail
-- Área administrativa com autenticação para:
-  - gerenciamento de categorias
-  - gerenciamento de subcategorias
-  - gerenciamento de produtos
-- Upload de imagens para produtos
+- interface institucional profissional
+- catálogo organizado por categoria e produto
+- estrutura simples e funcional para gestão de conteúdo
+- foco em usabilidade e apresentação visual
+- área administrativa para manutenção do catálogo
 
-## Estrutura do Repositório
+## Screenshots
 
-```text
-admin/                  # páginas e templates do painel administrativo
-css/                    # estilos do site
-includes/               # templates compartilhados, como o cabeçalho
-js/                     # scripts JavaScript do front-end
-midias/                 # imagens, vídeos e ícones
-php/                    # conexão com banco de dados, autenticação e APIs administrativas
-uploads/products/       # imagens enviadas para produtos
-docs/                   # documentação técnica e operacional
-CHANGELOG.md            # histórico de alterações relevantes
-.gitignore              # arquivos locais e temporários ignorados pelo Git
-```
+### Home
+![Home](screenshots/home.png)
 
-## Requisitos
+### Catálogo de produtos
+![Produtos](screenshots/produtos.png)
 
-Para executar este projeto localmente ou em um servidor web, são necessários:
+### Página de contato
+![Contato](screenshots/contato.png)
 
-- Servidor web com suporte a PHP
-- Extensão MySQLi habilitada
-- Banco de dados MySQL/MariaDB
-- Apache com mod_rewrite habilitado para as regras do arquivo .htaccess
-- Permissões de escrita na pasta uploads/products para uploads de imagens
+### Painel administrativo
+![Painel administrativo](screenshots/admin-login.png)
 
-## Instalação
+## Arquitetura
 
-1. Copie o conteúdo deste projeto para o diretório raiz do seu servidor web.
-2. Ajuste as credenciais de conexão no arquivo php/db_connect.php.
-3. Crie o banco de dados e as tabelas necessárias para os módulos de categorias, subcategorias, produtos e administração.
-4. Acesse o projeto pelo navegador.
-5. Para o painel administrativo, use a rota admin/login.php.
+A estrutura do projeto foi organizada para separar responsabilidades entre:
 
-> Observação: as credenciais de banco de dados atuais estão definidas diretamente no arquivo de conexão. Para ambientes de produção, recomenda-se mover essas configurações para variáveis de ambiente ou um arquivo de configuração externo.
+- camada de apresentação: páginas públicas e templates
+- camada de conteúdo: catálogo, categorias e detalhes de produto
+- camada administrativa: gestão de produtos e conteúdo
+- camada de dados: banco MySQL/MariaDB com conexão em PHP
 
-## Uso
+A organização foi pensada para manter o sistema simples, funcional e fácil de manter, com foco em performance, facilidade de atualização e apresentação institucional.
 
-- A navegação pública é feita pelas páginas principais do site, como index.php, produtos.php, catalogo.php e contato.php.
-- O conteúdo administrativo pode ser gerenciado pelo painel em admin/.
-- O menu público é montado dinamicamente a partir de categorias e subcategorias cadastradas no banco.
+## Observação importante
 
-## Documentação
+Este repositório foi preparado como material de apresentação para clientes e portfólio, não como projeto público de código aberto. Partes sensíveis do sistema, configurações internas e arquivos do cliente foram removidos ou mantidos fora do controle de versionamento.
 
-A documentação complementar encontra-se na pasta docs/:
+## Site
 
-- docs/architecture.md
-- docs/database.md
-- docs/workflow.md
-- docs/installation.md
-- docs/requirements.md
-- docs/roadmap.md
-- docs/technologies.md
-
-O histórico de alterações do repositório está em [CHANGELOG.md](CHANGELOG.md).
-
-## Capturas e Mídias
-
-As mídias do projeto estão organizadas em midias/ e incluem imagens de produtos, banners, ícones e vídeos do site.
-
-## Licença
-
-A licença deste projeto não foi definida no repositório. Recomendamos adicionar um arquivo de licença antes de publicar ou compartilhar o código publicamente.
+[www.vedavel.com.br](https://www.vedavel.com.br/)

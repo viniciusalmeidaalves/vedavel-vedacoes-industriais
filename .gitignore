@@ -3,6 +3,20 @@
 .env.*
 !.env.example
 
+# Sensível / comercial / não público
+admin/
+php/
+docs/
+midias/
+uploads/
+includes/
+.htaccess
+*.sql
+*.bak
+*.zip
+*.tar
+*.gz
+
 # Arquivos temporários do sistema operacional e editores
 .DS_Store
 Thumbs.db
@@ -13,10 +27,22 @@ Thumbs.db
 *.log
 *.tmp
 *.temp
+error_log
+
+# Arquivos temporários de editores
+*.swp
+*.swo
 
 # Arquivos temporários do PHP
 *.cache
 
-# Imagens enviadas em runtime
-uploads/products/*
-!uploads/products/.gitkeep
+# Manter somente conteúdo de apresentação
+!screenshots/
+!screenshots/**/*.png
+!screenshots/**/*.jpg
+!screenshots/**/*.jpeg
+!screenshots/**/*.webp
+
+# Garantir que o README e a apresentação continuem visíveis
+!README.md
+!CHANGELOG.md
